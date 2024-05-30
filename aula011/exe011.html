@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body{
+            background-color: rgb(142, 86, 231);
+            font: normal 18pt arial;
+        }
+        input{
+            font: normal 16pt arial;
+            border-radius: 5px;
+            width: 150px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Paises</h1>
+    <input type="text" name="entrada" id="entrada">
+    <input type="button" value="enviar" onclick="nacio()">
+    <div id="div"></div>
+    <script>
+        function nacio(){
+            var pais = window.document.getElementById('entrada').value
+            var div = window.document.getElementById('div')
+            div.innerHTML += `<p>morando em ${pais}</p>`
+            if(pais != 'brasil'){
+                div.innerHTML += `<p>voce é estrangeiro</p>`
+            }else{
+                div.innerHTML += `<p>voce é brasileiro</p>`
+            }
+            
+        }
+    </script>
+</body>
+</html>
