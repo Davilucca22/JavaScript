@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>estudando DOM</title>
+    <style>
+        body{
+            background-color: rgb(120, 243, 243);
+            font:normal 18pt arial ;
+        }
+    </style>
+</head>
+<body>
+    <h1>aprendendo DOM</h1>
+    <p>aqui vai o resultado</p>
+    <p>aprendendo <strong>DOM</strong> no curso em video</p>
+    <div id="lorem">Lorem ipsum</div><br>
+    <script>
+        //[0] serve para selecionar o paragrafo que ira selecionar
+        //var d = window.document.getElementById('lorem')
+        var d = window.document.querySelector('#lorem')
+        var p1 = window.document.getElementsByTagName('p')[1]
+        window.document.write('esta escrito assim:' + p1.innerHTML)
+        d.style.display = 'inline'
+        d.style.backgroundColor = 'white'
+    </script>
+</body>
+</html>
