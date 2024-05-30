@@ -30,13 +30,11 @@
     <div id="res"><p>resultado</p></div>
     <script>
         function soma(){
-        var n1 = window.document.getElementById('num1')
-        var n2 = window.document.getElementById('num2')
+        var n1 = Number(window.document.getElementById('num1').value)
+        var n2 = Number(window.document.getElementById('num2').value)
         var res = window.document.getElementById('res')
-        var v1 = Number(n1.value)
-        var v2 = Number(n2.value)
-        var s = v1 + v2
-        res.innerHTML = `<p>a soma entre ${v1} e ${v2} é igual a <strong>${s}</strong></p>`
+        var s = n1 + n2
+        res.innerHTML = `<p>a soma entre ${n1} e ${n2} é igual a <strong>${s}</strong></p>`
         }
     </script>
 </body>
