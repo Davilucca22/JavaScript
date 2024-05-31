@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(150, 197, 250);
+    font: normal 18pt arial;
+}
+
+header{
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+section{
+    width: 600px;
+    height: 500px;
+    background-color: rgb(236, 253, 255);
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.61) ;
+}
+
+img{
+    position: absolute;
+    border-radius: 50%;
+    margin-left: 5%;
+    margin-top: 10%;
+}
+
+#manha{
+    visibility: hidden;
+    transform: scale(0.7,1.1);
+    bottom: 22%;
+    left: 30%;
+}
+
+#tarde{
+    visibility: hidden;
+    bottom: 10%;
+    left: 32%;
+    transform: scale(0.9,0.7);
+}
+
+#noite{
+    visibility: hidden;
+    transform: scaleX(0.7);
+}
