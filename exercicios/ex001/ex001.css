@@ -10,36 +10,38 @@ header{
 }
 
 section{
+    display: flex;
     width: 600px;
     height: 500px;
-    background-color: rgb(236, 253, 255);
+    background-color: #ffffff;
     margin: 0 auto;
     border-radius: 10px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.61) ;
+    justify-content: center;
 }
 
 img{
     position: absolute;
     border-radius: 50%;
-    margin-left: 5%;
-    margin-top: 10%;
 }
 
-#manha{
+#prime{
     visibility: hidden;
-    transform: scale(0.7,1.1);
-    bottom: 22%;
-    left: 30%;
+    margin-top:15%;
+    left: 36%;
+    transform: scale(0.7,1);
 }
 
-#tarde{
+#segun{
     visibility: hidden;
-    bottom: 10%;
-    left: 32%;
-    transform: scale(0.9,0.7);
+    margin-top:9%;
+    left: 38%;
+    transform: scale(0.8,0.6);
 }
 
-#noite{
+#terce{
     visibility: hidden;
-    transform: scaleX(0.7);
+    margin-top: 14%;
+    left: 36%;
+    transform: scale(0.7,0.9);
 }
