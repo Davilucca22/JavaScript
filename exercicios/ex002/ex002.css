@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(150, 197, 250);
+    background-color: #96c5fa;
     font: normal 18pt arial;
 }
 
@@ -11,19 +11,27 @@ header{
 
 section{
     display: flex;
+    flex-flow: row;
     flex-wrap: wrap;
-    width: 600px;
-    height: 500px;
     background-color: #ffffff;
     margin: 0 auto;
+    width: 600px;
     border-radius: 10px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.61) ;
-    justify-content: center;
+   text-align: center;
 }
 
-.imagens img{
-    max-width: 200px;
-    max-height: 200px;
-    border-radius: 100%;
-    left: 60%;
+img{
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 50%;
+    
 }
+
+#botao{
+    border-radius: 5px;
+    background-color: #96c5fa;
+    width: 100px;
+    height: 40px;
+}
+
