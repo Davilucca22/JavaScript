@@ -1,0 +1,22 @@
+body{
+    background-color: #96c5fa;
+    font: normal 18pt arial;
+}
+
+header{
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+section{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    margin: 0 auto;
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.61) ;
+}
+
