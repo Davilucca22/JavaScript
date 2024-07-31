@@ -13,7 +13,7 @@ const pessoa = {
         numero : 61
     }
 }
-
+ 
 const {nome: teste ,sobrenome} = pessoa
 console.log(teste, sobrenome)
 
