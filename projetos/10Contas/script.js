@@ -33,14 +33,17 @@ function random(min = 0,max = 10){
 let rand = random()
 const contas = ['2 * 3 + (5 / 3) - 4','6 * 4 + 2','12 / 4 - 4 + 3','2 * 3 - 4 / 2',
     '22 / 2 - 5 + 3','7 * 3 / 12 - (-3)','(-6) - 14 * 7 + 18','5 * 4 *  3 * 2 * 1','25 - 4 * 9 + 13','1 + 45 - 12 / 3 + (-15)']
+let resultado = eval(contas[rand])
+
+
 
 //mostra contas
 function mostracontas(){
+    let rand = random()
     let texto = document.querySelector('#conta')
     texto.innerHTML = contas[rand]
 }
 
-mostracontas()
 
 //alternativas do jogo
 let alternativaA = document.querySelector('#a')
@@ -49,42 +52,50 @@ let alternativaC = document.querySelector('#c')
 let alternativaD = document.querySelector('#d')
 
 //muda  a posiçao da alternativa certa aleatóriamente
-function alternativaCerta(){
-    let n = random(0,4)
-    if(n == 1){
-        return alternativaA.value = eval(contas[rand])
-    }else if(n == 2){
-        return alternativaB.value = eval(contas[rand])
-    }else if(n == 3){
-        return alternativaC.value = eval(contas[rand])
-    }else{
-        return alternativaD.value = eval(contas[rand])
-    }
-}
 
+function alternativaCerta(){
+    let n = random(1,5)
+    console.log(n)
+    if(n == 1){
+        return alternativaA.value = resultado
+    }
+    if(n == 2){
+        return alternativaB.value = resultado
+    }
+    if(n == 3){
+        return alternativaC.value = resultado
+    }
+    if(n == 4){
+        return alternativaD.value = resultado
+    }
+  
+}
 alternativaCerta()
 
 function acertou(){
     alternativaA.addEventListener('click',function(){
-        if(alternativaA.value == eval(contas[rand])){
+        if(alternativaA.value == resultado){
            alternativaA.style.backgroundColor = 'green'
         }else{
             alternativaA.style.backgroundColor = 'red'
-        }})
+        }
+    })
     alternativaB.addEventListener('click',function(){
-        if(alternativaB.value == eval(contas[rand])){
+        if(alternativaB.value == resultado){
             alternativaB.style.backgroundColor = 'green'
         }else{
             alternativaB.style.backgroundColor = 'red'
-        }})
+        }
+    })
     alternativaC.addEventListener('click',function(){
-        if(alternativaC.value == eval(contas[rand])){
+        if(alternativaC.value == resultado){
             alternativaC.style.backgroundColor = 'green'
         }else{
             alternativaC.style.backgroundColor = 'red'
-        }})
+        }
+    })
     alternativaD.addEventListener('click',function(){
-        if(alternativaD.value == eval(contas[rand])){
+        if(alternativaD.value == resultado){
             alternativaD.style.backgroundColor = 'green'
         }else{
             alternativaD.style.backgroundColor = 'red'
@@ -93,3 +104,14 @@ function acertou(){
 }
 
 acertou()
+
+function mudaValores(){
+    let enviar = document.querySelector('#ok')
+    
+    enviar.addEventListener('click',function(){
+        alternativaCerta()
+        mostracontas()
+    })
+}
+
+mudaValores()

@@ -31,3 +31,9 @@ input{
     margin-bottom: 5px;
     cursor: pointer;
 }
+
+#ok{
+    width: 25%;
+    background-color: #048d16;
+    margin-left: 75%;
+}
