@@ -51,50 +51,59 @@ let alternativaB = document.querySelector('#b')
 let alternativaC = document.querySelector('#c')
 let alternativaD = document.querySelector('#d')
 
-//muda  a posiçao da alternativa certa aleatóriamente
 
+//muda  a posiçao da alternativa certa aleatóriamente
 function alternativaCerta(){
     let n = random(1,5)
     console.log(n)
     if(n == 1){
-        return alternativaA.value = resultado
+         alternativaA.value = resultado
+    }else{
+        alternativaA.value = random(0,10)
     }
     if(n == 2){
-        return alternativaB.value = resultado
+         alternativaB.value = resultado
+    }else{
+        alternativaB.value = random(0,12)
     }
     if(n == 3){
-        return alternativaC.value = resultado
+         alternativaC.value = resultado
+    }else{
+        alternativaC.value = random(0,20)
     }
     if(n == 4){
-        return alternativaD.value = resultado
+         alternativaD.value = resultado
+    }else{
+        alternativaC.value = random(0,15)
     }
   
 }
+
 alternativaCerta()
 
 function acertou(){
-    alternativaA.addEventListener('click',function(){
+    alternativaA.addEventListener('click',() => {
         if(alternativaA.value == resultado){
            alternativaA.style.backgroundColor = 'green'
         }else{
             alternativaA.style.backgroundColor = 'red'
         }
     })
-    alternativaB.addEventListener('click',function(){
+    alternativaB.addEventListener('click',() => {
         if(alternativaB.value == resultado){
             alternativaB.style.backgroundColor = 'green'
         }else{
             alternativaB.style.backgroundColor = 'red'
         }
     })
-    alternativaC.addEventListener('click',function(){
+    alternativaC.addEventListener('click',() => {
         if(alternativaC.value == resultado){
             alternativaC.style.backgroundColor = 'green'
         }else{
             alternativaC.style.backgroundColor = 'red'
         }
     })
-    alternativaD.addEventListener('click',function(){
+    alternativaD.addEventListener('click',() => {
         if(alternativaD.value == resultado){
             alternativaD.style.backgroundColor = 'green'
         }else{
@@ -108,7 +117,7 @@ acertou()
 function mudaValores(){
     let enviar = document.querySelector('#ok')
     
-    enviar.addEventListener('click',function(){
+    enviar.addEventListener('click',() => {
         alternativaCerta()
         mostracontas()
     })
