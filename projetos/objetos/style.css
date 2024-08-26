@@ -25,7 +25,7 @@ form input, button{
     height: 30px; 
     margin-bottom: 10px;
     text-align: center;
-}
+} 
 
 input:focus, input:hover{
     outline:1px solid #02789c;
@@ -43,4 +43,8 @@ button{
 
 button:hover{
     background-color: #045c77;
+}
+
+div{
+    text-align: left;
 }
