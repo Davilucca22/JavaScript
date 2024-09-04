@@ -12,7 +12,6 @@ function addvetor(){
         alert('[ERROR!] Digite um valor valido!')
     }else{
         vetor.push(num)
-        console.log(vetor)
     }
 
     list.innerHTML = ''
