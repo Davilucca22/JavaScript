@@ -8,6 +8,9 @@ body{
 }
 
 .conteiner{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
     height: 150px;
     width: 100%;
     background-color: rgb(43, 55, 65);
@@ -27,4 +30,9 @@ body{
 
 .menu:hover{
     cursor: pointer;
+}
+
+img{
+    margin-top: 20%;
+    padding: 20px;
 }
