@@ -1,0 +1,20 @@
+body{
+    background-color: #cecbc7;
+    padding: 0;
+    border: 0;
+    margin: 0%;
+}
+
+header{
+    height: 150px;
+    width: 100%;
+    background-color: #2b3741;
+}
+
+h1{
+    margin: 0%;
+    color: #cecbc7;
+    text-align: center;
+    font-size: 32pt;
+    padding-top: 3%;
+}

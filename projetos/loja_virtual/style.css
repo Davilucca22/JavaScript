@@ -12,7 +12,15 @@ body{
     width: 100%;
     background-color: #2b3741;
 }   
- 
+
+h1{
+    margin: 0%;
+    text-align: center;
+    padding: 3% 0 2%;
+    color: #cecbc7;
+    font-size: 32pt;
+}
+
 .menu{
     display: flex;
     flex-flow: row;
@@ -24,7 +32,6 @@ body{
     color: #cecbc7;
     text-align: center;
     gap: 20%;
-    margin-top: 110px;
     margin-left: 10%;
 }
 

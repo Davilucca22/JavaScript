@@ -12,7 +12,7 @@ function links(){
 
     const promoçoes = document.querySelector('#promoçao')
     promoçoes.addEventListener('click',() => {
-        window.open('telas/promoçoes.html')
+        window.open('telas/promoçoes/promoçoes.html')
     })
 
 }
