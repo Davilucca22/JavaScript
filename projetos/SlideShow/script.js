@@ -11,18 +11,12 @@ function SlideShow(){
     mostraImg(imagens[cont])
 
     cad.addEventListener('click',() => {
-        if(input.value !== ''){
-            for(let i of imagens){
-                if(input.value === i){
-                    alert('Link ja Cadastrado')
-                }else{
-                    imagens.push(input.value)
-                    input.value = ''
-                    input.focus()
-                }  
-            }
-        }else{
+        if(input.value === ''){
             alert('Campo Link Vazio!')
+        }else{
+            imagens.push(input.value)
+            input.value = ''
+            input.focus()
         }
         console.log(imagens)
     })
