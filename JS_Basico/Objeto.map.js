@@ -1,7 +1,7 @@
 const pessoas = [
     { id:3, nome:'joao'},
     { id:2, nome:'maria'},
-    { id:1, nome:'jonas'}
+    { id:1, nome:'jonas'}   
 ]
 
 /*poe o id na frente das chaves,mas reorganiza o array em ordem crescente(comportamento nao desejado)
@@ -16,7 +16,7 @@ for(const pessoa of pessoas){
 const novasPessoas = new Map()
 for(const pessoa of pessoas){
     const { id } = pessoa
-    //set() configura o objeto,coloca o ide na frente das chaves e copia o objeto
+    //set() configura o objeto,coloca o id na frente das chaves e copia o objeto
     novasPessoas.set(id, {...pessoa})
 }
 
