@@ -31,7 +31,7 @@ ValidaCpf.prototype.criaDigito = function (cpfParcial){
         return  ac
     },0)
 
-    const digito =  11- (total % 11)
+    const digito =  11 - (total % 11)
     //expressao ternaria(se digito maior que 9 retorna 0,senao retorna o digito)
     return digito > 9 ? '0' : String(digito)
 
