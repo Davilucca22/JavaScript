@@ -29,13 +29,14 @@ class ValidaCpf{
         return novoCPF === CpfLimpo
     }
 
-    //quando noa usar chaves da classe,o metodo pode se tornar estatico
+    //quando nao usar this,o metodo pode se tornar estatico
     static criaDigito(cpfparcial){
         //joga os numeros do cpf em um array
         const cpfArray =  Array.from(cpfparcial)
 
         //contador regressivo
         let cont = cpfArray.length + 1
+
         //multiplica os numeros pelo seu indice de forma decrescente
         const total = cpfArray.reduce((ac,valor) => {
             ac += (Number(valor) * cont)
@@ -61,38 +62,54 @@ class ValidaCpf{
 }
 
 class Formulario{
-    constructor(nome,sobrenome,CPF,senha,confSenha){
+    constructor(nome,sobrenome,CPF,usuario,senha,confSenha){
         this.nome = nome
         this.sobrenome = sobrenome
         this.cpf = CPF
+        this.usuario = usuario
         this.senha = senha
         this.confSenha = confSenha
     }
 
-    //verifica se todos os campos estao preenchidos e verifica as senhas
-    seVazio(){
-        if(!this.nome || !this.sobrenome || !this.cpf || !this.senha || !this.confSenha ){
-            alert('Preencha todos os campos!')
-        }else{
-            if(this.confSenha === this.senha){
-                alert('senhas condizem')
-            }else{
-                alert('senhas nao condizem')
-            }
-            alert('todos os campos preenchidos')
+    //verifica se todos os campos estao preenchidos,verifica as senhas e o usuario
+    Valido(){
+        if(!this.nome || !this.sobrenome || !this.cpf || !this.usuario || !this.senha || !this.confSenha ){
+            return false
+        }else if(this.usuario.length > 3 && this.usuario.length < 12 && typeof this.usuario == 'string' || typeof this.usuario == 'number'){
+            alert('Campos Validados!')
+            return true
         }
-
     }
-}
+    
+    Senhas(){
+        if(this.confSenha !== this.senha){
+            if(this.senha.length > 6 && this.senha.length < 12){
+                return true
+            }else{
+                alert('Senhas Invalidas')
+                return false
+            }
+        }
+    }
+
+}//Fim da classe
 
 document.querySelector('#enviar').addEventListener('click',() => {
-    const nome = document.querySelector('#Nome').value
+    const Nome = document.querySelector('#Nome').value
     const sobrenome = document.querySelector('#Sobrenome').value
     const CPF = document.querySelector('#CPF').value
+    const usuario = document.querySelector('#usuario').value
     const senha = document.querySelector('#Senha').value
     const confSenha = document.querySelector('#ConfirmSenha').value
-    const Form = new Formulario(nome,sobrenome,CPF,senha,confSenha)
-    Form.seVazio()
-    console.log(Form)
-})
+    const FormFiltro = new Formulario(Nome,sobrenome,CPF,usuario,senha,confSenha)
+    if(FormFiltro.Valido()){
+        if(FormFiltro.Senhas()){
+            const Form1 = new Formulario(Nome,sobrenome,CPF,usuario,senha,confSenha)
+            console.log(Form1)
+        }else{
+            alert('senha pequena')
+        }
+    }
+    console.log('form:' +  FormFiltro)
 
+})
