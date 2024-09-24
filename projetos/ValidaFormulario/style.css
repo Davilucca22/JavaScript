@@ -42,3 +42,10 @@ button{
 button:hover{
     background-color: #6b0707;
 }
+
+#NomeVazio,#SobrenomeVazio,#CPfVazio,#UsuVazio,#Senha1Vazio,#Senha2Vazio {
+    color:red;
+    font-size: 10pt;
+    display:none;
+    margin: 0%;
+}
