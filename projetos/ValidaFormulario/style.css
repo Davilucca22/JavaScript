@@ -37,13 +37,14 @@ button{
     color: aliceblue;
     height: 40px;
     font-size: 15pt;
+    margin-top: 10px;
 }
 
 button:hover{
     background-color: #6b0707;
 }
 
-#NomeVazio,#SobrenomeVazio,#CPfVazio,#UsuVazio,#Senha1Vazio,#Senha2Vazio {
+#NomeVazio,#SobrenomeVazio,#CPfVazio,#UsuVazio,#Usuconfig,#UsuCaractere,#Senha1Vazio,#Senha2Vazio,#AvisoSenha,#SenhaCurta,#SenhaLonga {
     color:red;
     font-size: 10pt;
     display:none;

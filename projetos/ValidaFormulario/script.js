@@ -8,6 +8,7 @@ class Formulario{
         this.senha2 = senha2
     }
 
+    //se os inputs estiverem vazios as mensagens de 'campo vazio' aparecem,senao as mensagens ficam invisiveis
     Vazio(){
         const nomeVazio = document.querySelector('#NomeVazio')
         if(this.nome === ''){
@@ -52,8 +53,36 @@ class Formulario{
         }
     }
 
+    //verifica o tamanho do nome de usuario e mostra a mensagem caso o tamanho nao se enquadre
     ValidaUsuario(){
-        if(typeof this.usuario != 'string' || typeof this.usuario !== 'number'){}
+        const Caracter = document.querySelector('#UsuCaractere')
+        if(this.usuario.length < 3 || this.usuario.length > 12){
+            Caracter.style.display = 'block'
+        }else{
+            Caracter.style.display = 'none'
+        }
+    }
+
+    //verifica se as duas senhas sao iguais e verificao o tamanho da senha
+    ValidaSenha(){
+        const aviso = document.querySelector('#AvisoSenha')
+        if(this.senha1 === this.senha2){
+            aviso.style.display = 'none'
+        }else{
+            aviso.style.display = 'block'
+        }
+
+        const curta = document.querySelector('#SenhaCurta')
+        const longa = document.querySelector('#SenhaLonga')
+        if(this.senha1.length < 6 ){
+            curta.style.display = 'block'
+        }else if(this.senha1.length > 12){
+            curta.style.display = 'none'
+            longa.style.display = 'block'
+        }else{
+            curta.style.display = 'none'
+            longa.style.display = 'none'
+        }
     }
 
 }
@@ -67,7 +96,9 @@ enviar.addEventListener('click',() =>{
     const Usuario = document.querySelector('#usuario').value
     const Senha1 = document.querySelector('#Senha').value
     const Senha2 = document.querySelector('#ConfirmSenha').value
-
+    
     const Form = new Formulario(Nome,SobreNome,cpf,Usuario,Senha1,Senha2)
     Form.Vazio()
+    Form.ValidaUsuario()
+    Form.ValidaSenha()
 })
