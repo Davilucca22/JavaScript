@@ -30,7 +30,7 @@ function AddTabela(){
     const nomeTabela = document.createElement('td')
     const cpfTabela = document.createElement('td')
     matriculaTabela.textContent = ListaAlunos[cont].matricula
-    nomeTabela.textContent = ListaAlunos[cont].nome
+    nomeTabela.textContent = ListaAlunos[cont].nome.toUpperCase()
     cpfTabela.textContent = ListaAlunos[cont].cpf
     linhaTabela.appendChild(matriculaTabela)
     linhaTabela.appendChild(nomeTabela)

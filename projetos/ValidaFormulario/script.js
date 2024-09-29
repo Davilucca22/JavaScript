@@ -56,6 +56,13 @@ class Formulario{
     //verifica o tamanho do nome de usuario e mostra a mensagem caso o tamanho nao se enquadre
     ValidaUsuario(){
         const Caracter = document.querySelector('#UsuCaractere')
+        const UsuType = document.querySelector('#Usuconfig') 
+        if(typeof this.usuario != 'string' || typeof this.usuario != 'number'){
+            UsuType.style.display = 'block'
+        }else{
+            UsuType.style.display = 'none'
+        }
+
         if(this.usuario.length < 3 || this.usuario.length > 12){
             Caracter.style.display = 'block'
         }else{
@@ -72,18 +79,73 @@ class Formulario{
             aviso.style.display = 'block'
         }
 
-        const curta = document.querySelector('#SenhaCurta')
-        const longa = document.querySelector('#SenhaLonga')
-        if(this.senha1.length < 6 ){
-            curta.style.display = 'block'
-        }else if(this.senha1.length > 12){
-            curta.style.display = 'none'
-            longa.style.display = 'block'
+        const Senha = document.querySelector('#SenhaInvalida')
+        if(this.senha1.length < 6 || this.senha1.length > 12){
+            Senha.style.display = 'block'
         }else{
-            curta.style.display = 'none'
-            longa.style.display = 'none'
+            Senha.style.display = 'none'
         }
     }
+
+    Cpflimpo(){
+        return this.CPF.replace(/\D+/g,'')
+    }
+
+    ValidaCpf(){
+        const CpfLimpo = this.Cpflimpo()
+        if(typeof CpfLimpo === 'String') return false
+        if(CpfLimpo.length != 11) return false
+        if(this.SeSequencia()) return false
+
+        const CpfParcial = CpfLimpo.slice(0,-2)
+
+        const digito1 = Formulario.CriaDigito(CpfParcial)
+        const digito2 = Formulario.CriaDigito(CpfParcial + digito1)
+        const novoCpf = CpfParcial + digito1 + digito2
+
+        return novoCpf === CpfLimpo
+    }
+
+    MostraAviso(){
+        const AvisoCpf = document.querySelector('#CpfInvalido')
+        const Valido = this.ValidaCpf()
+        if(!Valido){
+            AvisoCpf.style.display = 'block'
+        }else{
+            AvisoCpf.style.display = 'none'
+        }
+    }
+
+    static CriaDigito(CpfParcial){
+        const cpfArray = Array.from(CpfParcial)
+
+        let contador = cpfArray.length + 1
+
+        const total = cpfArray.reduce((ac,valor) => {
+            ac += (Number(valor) * contador)
+            contador--
+            return ac
+        },0)
+
+        const digito = 11 - (total % 11)
+
+        return digito > 9 ? '0' : String(digito)
+    }
+
+    SeSequencia(){
+        const cpfparcial = this.Cpflimpo()
+        const sequencia = cpfparcial[0].repeat(cpfparcial.length)
+        return sequencia === cpfparcial
+    }
+
+    Chama(){
+        this.Vazio()
+        this.ValidaUsuario()
+        this.ValidaSenha()
+        this.ValidaCpf()
+        this.MostraAviso()
+    }
+
 
 }
 
@@ -98,7 +160,5 @@ enviar.addEventListener('click',() =>{
     const Senha2 = document.querySelector('#ConfirmSenha').value
     
     const Form = new Formulario(Nome,SobreNome,cpf,Usuario,Senha1,Senha2)
-    Form.Vazio()
-    Form.ValidaUsuario()
-    Form.ValidaSenha()
+    Form.Chama()
 })
