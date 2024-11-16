@@ -10,5 +10,7 @@ const pessoas = [
     {nome:'isa',idade:11}
 ]
 
+
+//filtra os usuarios maiores de  idade
 const Dmaior = pessoas.filter(valor => valor.idade >= 18)
 console.log(Dmaior)
