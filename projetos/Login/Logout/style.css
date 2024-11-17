@@ -1,0 +1,39 @@
+
+body{
+    font-size: 14pt;
+    font-family: 'Open Sans', arial;
+    background-color: #eaeaeb;
+}
+
+.conteiner{
+    background-color: rgb(92, 142, 207);
+    max-width: 600px;
+    margin: 60px auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#nome{
+    font-size: 12pt;
+    width: 300px;
+    height: 25px;
+}
+
+#enviar{
+    font-size: 12pt;
+    width: 60px;
+    height: 30px;
+    background-color: green;
+    
+}
+
+.logout {
+    display: none;
+}
+
+#sair{
+    font-size: 12pt;
+    width: 60px;
+    height: 30px;
+    background-color: #b43030;
+}
