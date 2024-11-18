@@ -12,9 +12,9 @@ function addvetor(){
         alert('[ERROR!] Digite um valor valido!')
     }else{
         vetor.push(num)
+        list.value = ''
     }
 
-    list.innerHTML = ''
 
     //cria um option no select e mostra na tela o valor digitado
     for(let cont in vetor){
