@@ -13,22 +13,22 @@ const pessoas = [
 ]
 
 //retorna um array apenas com os nomes de pessoas
-const nomePessoa = pessoas.map(valor => valor.nome)
-console.log('Array apenas com os nomes dos objetos:')
-console.log(nomePessoa)
+const Nomes = pessoas.map(valor => valor.nome)
+console.log('array apenas com os nomes das pessoas')
+console.log(Nomes)
 
 //remove a chave 'nome' do objeto
-const remove = pessoas.map((valor,indice,array) => {
+const RemoveNome = pessoas.map((valor,indice,array) => {
     delete valor.nome
-    return array
+    return valor
 })
-console.log('Nomes removidos dos objetos')
-console.log(pessoas)
+console.log('array sem os nomes')
+console.log(RemoveNome)
 
 //adicona uma chave id  em cada objeto
-const addId = pessoas.map((valor,indice,array) => {
+const addID = pessoas.map((valor,indice,array) =>{
     valor.id = indice
-    return array
+    return valor
 })
-console.log('ID adicionado em cada objeto')
-console.log(pessoas)
+console.log('array com IDs')
+console.log(addID)
