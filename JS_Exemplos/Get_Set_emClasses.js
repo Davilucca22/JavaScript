@@ -1,4 +1,4 @@
-//trava o valor da velocidade
+//Symbol serve para proteger a variavel,quando usado o valor da variavel se torna fixo e nao é possivel muda-lo
 const _velocidade = Symbol('velocidade')
 class Carro{
     constructor(nome){
@@ -40,4 +40,4 @@ for(let i = 0;i <= 200;i++){
 //tentativa de mudar o valor da velocidade(se  o valor for menor que 100 a velocidade muda)
 c1.velocidade = 2000
 
-console.log(c1.velocidade)
+console.log(c1)

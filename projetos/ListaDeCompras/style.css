@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(226, 226, 226);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.conteiner{
+    text-align: center;    
+    display:flex ;
+    flex-flow: row; 
+    flex-wrap:wrap;
+}   
+
+h1{
+    width: 100%;
+    text-align: center;
+}
+
+table{
+    margin: 20px auto;
+    width: 90%;
+    border: 1px solid black;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+
+thead{
+    background-color: rgb(35, 29, 80);
+    color: white;
+    font-size: 16pt;
+}
+
+tbody{
+    background-color: rgb(127, 150, 255);
+    font-size: 14pt;
+}
+
+label{
+    font-size: 20pt;
+    margin-left:7%;
+}
+
+input{
+    width: 70%;
+    height: 25px;
+    margin-top: 10px;
+}
+
+button{
+    margin: 10px auto;
+    border: 1px solid black;
+    background-color: #50ee50;
+    width: 90%;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
