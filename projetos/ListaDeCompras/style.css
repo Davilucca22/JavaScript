@@ -45,7 +45,7 @@ input{
     margin-top: 10px;
 }
 
-button{
+#enviar{
     margin: 10px auto;
     border: 1px solid black;
     background-color: #50ee50;
@@ -56,3 +56,8 @@ button:hover{
     cursor: pointer;
 }
 
+#deletar {
+    height: 20px;
+    background-color: #a00000;
+    border-radius: 10px;
+}
