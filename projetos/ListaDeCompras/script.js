@@ -27,6 +27,7 @@ function criaTabela(tudo){
     corpoTabela.innerHTML = ''
     for(let i = 0;i < tudo.length ; i++){
         const linha = document.createElement('tr')
+        linha.id = tudo[i].nome
         const coluna1 = document.createElement('td')
         const coluna2 = document.createElement('td')
         coluna1.innerHTML = tudo[i].nome
@@ -34,8 +35,9 @@ function criaTabela(tudo){
         linha.appendChild(coluna1)
         linha.appendChild(coluna2)
         corpoTabela.appendChild(linha)
+
     }
-    return corpoTabela
+
 }
 
 //limpa os inputs e a tabela para receber os novos itens
@@ -59,7 +61,19 @@ btn_enviar.addEventListener('click',() => {
         localStorage.setItem("tudo",JSON.stringify(tudo))
         limpaTudo()
         criaTabela(tudo)
-    }
+        console.log(tudo.length)
+    }   
 })
+
+const tabela = document.querySelector('#corpoTabela')
+
+
+//remove os elementos da tabela(esta removendo apenas uma coluna,tem que remover a linha inteira)
+tabela.addEventListener('Dblclick',e => {
+    const linha = document.querySelector('tr')
+    e.target.remove(linha)
+    console.log(e.target)
+})
+
 
 window.onload = iniciar
