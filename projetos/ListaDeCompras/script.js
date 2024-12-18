@@ -69,9 +69,9 @@ const tabela = document.querySelector('#corpoTabela')
 
 
 //remove os elementos da tabela(esta removendo apenas uma coluna,tem que remover a linha inteira)
-tabela.addEventListener('Dblclick',e => {
+tabela.addEventListener('click',e => {
     const linha = document.querySelector('tr')
-    e.target.remove(linha)
+    e.target.remove()
     console.log(e.target)
 })
 
