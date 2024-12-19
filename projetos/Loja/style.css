@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
 body{
-    font-size: 14pt;
-    font-family: 'Open Sans', arial;
-    background-color: #7a0505;
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #282634;
 }
 
 h1{
@@ -11,34 +9,54 @@ h1{
 }
 
 .conteiner{
-    background-color: aliceblue;
+    background-color: #00b7c4;
     max-width: 600px;
     margin: 60px auto;
     border-radius: 10px;
     padding: 10px;
+    box-shadow: -2px 6px 8px 2px black;
 }
 
-form input, button{ 
-    display: block;
-    width:100%;
+
+form{   
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+label{
+    margin-bottom: 5px;
+}
+
+input, button{ 
+    outline: 0  ;
+    width:90%;
     height: 30px;
     margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px;
+    padding: 5px;
 }
-
-input:focus, input:hover{
-    outline:1px solid #7a0505;
-}
-
 
 button{
-    border: 0;
+    box-shadow: -1px 2px 2px 1px black;
     cursor: pointer;
-    background-color: #7a0505;
+    background-color:  #282634;
     color: aliceblue;
     height: 40px;
     font-size: 15pt;
 }
 
 button:hover{
-    background-color: #6b0707;
+    background-color: #2b2935;
 }
+
+#masc, #fem {
+    height: 25px;
+    width: 25%;
+    
+}
+
+#masc:hover, #fem:hover{
+    cursor: pointer;
+} 
