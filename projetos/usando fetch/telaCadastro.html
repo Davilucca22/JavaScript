@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <script defer src="script.js" id="script"></script>
     <title>Loja-Cadastro</title>
 </head>
 <body>
@@ -24,7 +24,7 @@
             <input type="number" id="senha" placeholder="8 Caracteres no minimo...">
 
             <label for="Data-nasc">Data de Nascimento</label>
-            <input type="date" id="Data-nasc">
+            <input type="date" id="Data-nasc" max="2024-01-01" aria-required="true">   
 
             <label for="masc">Masculino</label>
             <input type="checkbox" id="masc" checked>
