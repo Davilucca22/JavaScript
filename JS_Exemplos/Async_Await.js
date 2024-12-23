@@ -26,7 +26,7 @@ espera('lucca')
 //que isso
 async function executa() {
     try{
-        const p1 = await espera(3)
+        const p1 = await espera('awn')
         const p2 = p1.toUpperCase()
         console.log(p2)
     }catch(erro){
