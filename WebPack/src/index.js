@@ -1,8 +1,6 @@
-function iniciar(){
-    document.addEventListener('click',e => {
-        const alvo = e.target
-        console.log(alvo)
-    })
-}
+const h1 = document.querySelector('#h1')
+const btn = document.querySelector('#botao')
 
-window.onload = iniciar 
+btn.addEventListener('click',() => {
+    h1.innerText = 'Ola,Mundo'
+})
