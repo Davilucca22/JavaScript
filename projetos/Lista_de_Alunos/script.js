@@ -45,13 +45,14 @@ function limpaInput(){
     cpf.value = ''
 }
 
-//poe o numero da matricula como id do objeto com as informaçoes do aluno
-function organizaMatricula(){
-    const novalista = new Map()
-    for(let aluno of ListaAlunos){
-        const { matricula } = aluno
-        novalista.set(matricula,{...ListaAlunos})
-    }
+
+function formataCPF(cpf){
+    return(
+        cpf.slice(0,3) + '.' +
+        cpf.slice(3,6) + '.' +
+        cpf.slice(6,9) + '-' +
+        cpf.slice(9,11)
+    )
 }
 
 //monitora  o evento de clique no botao de salver e chama as funçoes
@@ -59,11 +60,11 @@ salvar.addEventListener('click',() => {
     if(nome.value === '' || cpf.value === ''){
         alert('preencha os campos necessarios')
     }else{
-        AddLista(nome.value,cpf.value)
-        limpaInput()
-        temp()
+        const cpfBom = formataCPF(cpf.value)
+        AddLista(nome.value,cpfBom)
         AddTabela()
-        organizaMatricula() 
+        limpaInput()
+        temp()  
         cont++
     }
 })
@@ -76,11 +77,11 @@ nome.addEventListener('keyup',e =>{
 
 cpf.addEventListener('keyup',e =>{
     if(e.keyCode == 13){
-        AddLista(nome.value,cpf.value)
+        const cpfBom = formataCPF(cpf.value)
+        AddLista(nome.value,cpfBom)
         limpaInput()
         temp()
         AddTabela()
-        organizaMatricula() 
         cont++
     }
 })
