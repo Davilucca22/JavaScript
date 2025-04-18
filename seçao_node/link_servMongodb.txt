@@ -1,1 +1,0 @@
-mongodb+srv://daviluca:TK_SN4CK@cursojs.ouhqove.mongodb.net/?retryWrites=true&w=majority&appName=cursoJS
