@@ -28,6 +28,7 @@ const routes = require('./routes')
 //importa meu middleware criado na pasta funçoes
 const meuMiddleware = require('./src/middlewares/funcoes')
 
+//configura a session
 const sessionOptions = session({
     secret:process.env.SECRET, //o secret cria uma assinatura digital para impedir q a sessao seja alterada manualmente
     store: MongoStore.create({ mongoUrl: process.env.LOGINADM }), //store faz com q as sessoes sejam guaradadas em um banco de dados externo,nesse projeto uso o mongodb
