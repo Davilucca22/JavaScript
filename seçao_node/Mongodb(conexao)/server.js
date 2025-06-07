@@ -5,7 +5,7 @@ require('dotenv').config()
 const express = require('express')
 
 //chama a funçao express()
-const app = express()
+const app = express()   
 
 //importa o mongoose para o projeto
 const mongoose = require('mongoose')

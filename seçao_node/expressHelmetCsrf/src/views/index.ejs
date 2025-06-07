@@ -6,14 +6,11 @@
         <%#isso é um comentario %>
         
         <%# mostra o titulo q esta contido no homecontroller %>
-        <%- titulo %> <br>
-        <%= titulo %>
-
-    </h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis impedit fuga porro vel explicabo eos, maxime soluta deleniti recusandae eveniet temporibus suscipit perferendis fugiat inventore, repellat et iure mollitia officiis.</p>
-        <%# usa JS no EJS dentro da tag%>
-    <p><% numeros.forEach(num => { %>
-       <%= num %>
-    <% }) %></p>
+        <form action="/" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <label for="">cliente</label>
+            <input type="text" name="cliente" id="">
+            <button type="button">submit</button>
+        </form>
 </body>
 </html>

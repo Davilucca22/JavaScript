@@ -1,14 +1,15 @@
 const express = require('express')
 const route = express.Router()
+
 //importa as funçoes do homecontroller
-const home = require('./src/controllers/homecontroller')
+const { paginaInicial, formulario} = require('./src/controllers/homecontroller')
 const contato = require('./src/controllers/contatocontroller')
 
 //rotas da home
-route.get('/', home.paginaInicial)
-route.post('/', home.formulario)
+route.get('/', paginaInicial)
+route.post('/', formulario)
 
 //rota de contato
 route.get('/contato', contato.paginaInicial)
 
-module.exports = route
+module.exports = route 
